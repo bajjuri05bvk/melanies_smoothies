@@ -44,12 +44,12 @@ if ingredients_list:
         # Filter for matching fruit
         #search_on= pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
         # Check if the user picked a fruit
-            if fruit_chosen:
+        if fruit_chosen:
                 # Make sure columns exist
-                required_cols = {"FRUIT_NAME", "SEARCH_ON"}
-                if not required_cols.issubset(pd_df.columns):
-                    st.error(f"Expected columns {required_cols}, but got {list(pd_df.columns)}")
-                    st.stop()
+             required_cols = {"FRUIT_NAME", "SEARCH_ON"}
+             if not required_cols.issubset(pd_df.columns):
+                   st.error(f"Expected columns {required_cols}, but got {list(pd_df.columns)}")
+                   st.stop()
             
                 # Filter safely (case-insensitive, NaN-safe)
                 filtered = pd_df.loc[
@@ -57,7 +57,7 @@ if ingredients_list:
                     'SEARCH_ON'
                 ]
             
-                if not filtered.empty:
+               if not filtered.empty:
                     search_on = filtered.iloc[0]
                 else:
                     st.error(f"No match found for '{fruit_chosen}'.")
