@@ -52,10 +52,7 @@ if ingredients_list:
                    st.stop()
             
                 # Filter safely (case-insensitive, NaN-safe)
-                filtered = pd_df.loc[
-                    pd_df['FRUIT_NAME'].str.lower().fillna('') == fruit_chosen.lower(),
-                    'SEARCH_ON'
-                ]
+                filtered = pd_df.loc[pd_df['FRUIT_NAME'].str.lower().fillna('') == fruit_chosen.lower(),'SEARCH_ON']
             
                if not filtered.empty:
                     search_on = filtered.iloc[0]
