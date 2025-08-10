@@ -51,11 +51,11 @@ if ingredients_list:
         # Now safe to filter
         filtered = pd_df.loc[pd_df['FRUIT_NAME'].str.lower().fillna('') == fruit_chosen.lower(),'SEARCH_ON']
 
-            if not filtered.empty:
-              search_on = filtered.iloc[0]
-            else:
-              st.error(f"No match found for '{fruit_chosen}'.")
-              st.stop()
+              if not filtered.empty:
+                search_on = filtered.iloc[0]
+              else:
+                st.error(f"No match found for '{fruit_chosen}'.")
+                st.stop()
 
 
         st.subheader(fruit_chosen +'Nutrition Information')
