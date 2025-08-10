@@ -59,7 +59,7 @@ if ingredients_list:
          else:
                st.error(f"No match found for '{fruit_chosen}'.")
                st.stop()
-        else:
+         else:
                 st.warning("Please choose a fruit first.")
                 st.stop()
 
